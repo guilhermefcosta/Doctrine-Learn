@@ -1,6 +1,6 @@
 <?php
 
-namespace Empresa\Fonte\Entity;
+namespace Empresa\Pacote\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
