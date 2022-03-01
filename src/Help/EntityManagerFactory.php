@@ -15,7 +15,10 @@ class EntityManagerFactory
         
         // pegar dados a partir de anotações
         $config = Setup::createAttributeMetadataConfiguration(
-            [$rootDir . '/src'],
+            [
+                $rootDir . '/src', 
+                $rootDir . '/src/Entity'
+            ], 
             true // development
         );
         
@@ -26,6 +29,5 @@ class EntityManagerFactory
         ];
 
         return EntityManager::create($connection, $config);
-
     }
 }
