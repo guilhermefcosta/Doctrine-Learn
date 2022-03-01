@@ -2,23 +2,21 @@
 
 namespace Empresa\Pacote\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
- * @ORM\Entity
- * @ORM\Table(name="Alunos")
+ * @Entity
+ * @Table(name="Alunos")
  */
 class Aluno 
 {
     /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
+     * @Id
+     * @GeneratedValue
+     * @Column(type="integer")
      */
     private $id;
 
     /**
-     * @ORM\Column(type="string") 
+     * @Column(type="string") 
      */
     private $nome;
 
@@ -34,6 +32,5 @@ class Aluno
         $this->nome = $novoNome;
         return $this;
     }
-
 
 }

@@ -9,6 +9,11 @@
     "autoload": {
         "psr-4": {
             "Empresa\\Pacote\\": "src/"
-        }
+        },
+
+        "files": [
+            "./bootstrap.php"
+        ]
+
     }
 }
