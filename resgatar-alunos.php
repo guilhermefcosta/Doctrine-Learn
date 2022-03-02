@@ -1,6 +1,7 @@
 <?php
 
 use Empresa\Pacote\Entity\Aluno;
+use Empresa\Pacote\Entity\Telefone;
 use Empresa\Pacote\Help\EntityManagerFactory;
 
 require_once __DIR__ . "/vendor/autoload.php";
@@ -16,7 +17,14 @@ $alunoRespositorio = $em->getRepository(Aluno::class);
 $alunos = $alunoRespositorio->findAll();
 
 foreach ($alunos as $aluno) {
-    echo $aluno->getId() . "\t". $aluno->getNome() . "\n\n";
+    $tels = $aluno->getTelefones();
+
+    $arr = $tels->map(function (Telefone $n) {
+        return $n->getNumTelefone();
+    })->toArray();
+
+    echo $aluno->getId() . "\t". $aluno->getNome()  . "\t". implode(",", $arr) ."\n\n";
+
 }
 
 print "===================|==================\n\n";
@@ -37,16 +45,3 @@ foreach ($alunos as $aluno) {
 }
 
 print "===================|==================\n\n";
-
-/**
- * @var Aluno[] 
- */
-
-$aluno = $alunoRespositorio->findBy(
-    [
-        "nome" => "Guilherme Ferreira"
-    ]
-);
-
-var_dump($aluno);
-

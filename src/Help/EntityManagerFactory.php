@@ -24,8 +24,10 @@ class EntityManagerFactory
         );
             
         $conn = array(
-            'driver' => 'pdo_sqlite',
-            'path' => $rootDir . '/var/data/db.sqlite',
+            'driver'   => 'pdo_mysql',
+            'user'     => 'root',
+            'password' => 'Darknet1:',
+            'dbname'   => 'Doctrine',
         );
         
         // obtaining the entity manager

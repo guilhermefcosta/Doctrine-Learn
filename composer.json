@@ -1,19 +1,14 @@
 {
     "require": {
-        "doctrine/orm": "^2.11.0",
-        "doctrine/dbal": "^3.2",
-        "doctrine/annotations": "1.13.2",
+        "doctrine/orm": "2.7.4",
         "symfony/yaml": "^5.4",
-        "symfony/cache": "^5.4"
+        "symfony/cache": "^5.4",
+        "doctrine/migrations": "^3.4"
     },
+
     "autoload": {
         "psr-4": {
             "Empresa\\Pacote\\": "src/"
-        },
-
-        "files": [
-            "./bootstrap.php"
-        ]
-
+        }
     }
 }
